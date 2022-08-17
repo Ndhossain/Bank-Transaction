@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bap Er Bank</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              headCol: "#FFE898",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-gradient-to-r from-cyan-500 to-blue-500 text-white">
+    <header class="">
+      <h1 class="font-semibold text-5xl text-center my-5">
+        Welcome to <span class="text-headCol">Baap Er Bank</span>
+      </h1>
+    </header>
+    <main class="w-[80%] mx-auto">
+      <section class="grid md:grid-cols-3 gap-5 mt-20">
+        <div
+          class="flex flex-row md:flex-col gap-2 justify-between p-10 backdrop-blur-sm bg-violet-500/50 rounded-xl shadow-md"
+        >
+          <h2 class="text-3xl font-semibold">Deposit</h2>
+          <h1 class="text-5xl font-bold">$<span id="deposit">00</span></h1>
+        </div>
+        <div
+          class="flex flex-row md:flex-col gap-2 justify-between p-10 backdrop-blur-sm bg-red-500/50 rounded-xl shadow-md"
+        >
+          <h2 class="text-3xl font-semibold">Withdraw</h2>
+          <h1 class="text-5xl font-bold">$<span id="withdraw">00</span></h1>
+        </div>
+        <div
+          class="flex flex-row md:flex-col gap-2 justify-between p-10 backdrop-blur-sm bg-lime-500/50 rounded-xl shadow-md"
+        >
+          <h2 class="text-3xl font-semibold">Balance</h2>
+          <h1 class="text-5xl font-bold">$<span id="balance">1000</span></h1>
+        </div>
+      </section>
+      <section class="flex flex-col md:flex-row gap-5 mt-10">
+        <div
+          class="p-10 bg-amber-500/70 backdrop-blur-sm rounded-xl shadow-md w-full"
+        >
+          <h2 class="text-3xl font-medium">Deposit Here</h2>
+          <input
+            class="my-5 bg-transparent block outline-none border-2 rounded p-1 placeholder:text-slate-200 placeholder:text-sm"
+            placeholder="Enter Amount"
+            type="number"
+            id="depositAmount"
+            min="0"
+          />
+          <button
+            class="px-3 py-2 rounded bg-blue-500 hover:bg-blue-600"
+            id="depositBtn"
+            onclick="accountBalanceConfig('deposit')"
+          >
+            Deposit
+          </button>
+        </div>
+        <div
+          class="p-10 bg-fuchsia-500/70 backdrop-blur-sm rounded-xl shadow-md w-full"
+        >
+          <h2 class="text-3xl font-medium">Withdraw Here</h2>
+          <input
+            class="my-5 bg-transparent block outline-none border-2 rounded p-1 placeholder:text-slate-200 placeholder:text-sm"
+            placeholder="Enter Amount"
+            type="number"
+            id="withdrawAmount"
+            min="0"
+          />
+          <button
+            class="px-3 py-2 rounded bg-blue-500 hover:bg-blue-600"
+            id="withdrawBtn"
+            onclick="accountBalanceConfig('withdraw')"
+          >
+            Withdraw
+          </button>
+        </div>
+      </section>
+    </main>
+    <script src="js/account.js"></script>
+  </body>
+</html>
